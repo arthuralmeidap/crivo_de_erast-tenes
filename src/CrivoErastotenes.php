@@ -11,11 +11,16 @@ class CrivoErastotenes
 
 	public function numerosPrimos()
 	{
-		$listaCompleta 	= range(2, $this->limit);
-		$numerosPrimos	= $listaCompleta;			
+		$numerosPrimos				= range(2, $this->limit);
+		$maiorNumeroParaVerificar 	= $this->maiorNumeroParaVerificar();
 
-		foreach ($listaCompleta as $numero) {
+		if($maiorNumeroParaVerificar < 2) {
+			return range(2, $this->limit);
+		}
+
+		foreach ( range(2, $this->maiorNumeroParaVerificar() ) as $numero ) {
 			$numerosPrimos = $this->removeNumerosMultiplos($numerosPrimos, $numero);
+			
 		}
 
 		return $numerosPrimos;
@@ -26,5 +31,10 @@ class CrivoErastotenes
 		return array_values(array_filter($lista, function ($item) use($numero) {
 			return !($item % $numero == 0 && $item != $numero);
 		}));
+	}
+
+	private function maiorNumeroParaVerificar()
+	{
+		return floor(sqrt($this->limit));
 	}
 }
