@@ -22,5 +22,4 @@ class CrivoErastotenesTest extends \PHPUnit_Framework_TestCase
 		$crivo = new CrivoErastotenes(10);
 		$this->assertEquals(array(2, 3, 5, 7, 9), $crivo->numerosPrimos());	
 	}
-
 }
