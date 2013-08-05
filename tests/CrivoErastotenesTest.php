@@ -19,7 +19,13 @@ class CrivoErastotenesTest extends \PHPUnit_Framework_TestCase
 
 	public function testeDeveRemoverMultiplosDoPrimeiroNumeroPrimo()
 	{
-		$crivo = new CrivoErastotenes(10);
-		$this->assertEquals(array(2, 3, 5, 7, 9), $crivo->numerosPrimos());	
+		$crivo = new CrivoErastotenes(5);
+		$this->assertEquals(array(2, 3, 5), $crivo->numerosPrimos());	
+	}
+
+	public function testeDeveRemoverMultiplosDeTodosOsNumeros()
+	{
+		$crivo = new CrivoErastotenes(20);
+		$this->assertEquals(array(2, 3, 5, 7, 11, 13, 17, 19), $crivo->numerosPrimos());	
 	}
 }
