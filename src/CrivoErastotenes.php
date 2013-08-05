@@ -18,7 +18,7 @@ class CrivoErastotenes
 			return range(2, $this->limit);
 		}
 
-		foreach ( range(2, $this->maiorNumeroParaVerificar() ) as $numero ) {
+		foreach (range(2, $this->maiorNumeroParaVerificar()) as $numero ) {
 			$numerosPrimos = $this->removeNumerosMultiplos($numerosPrimos, $numero);
 			
 		}
