@@ -5,7 +5,7 @@ include __DIR__ . '/../src/CrivoErastotenes.php';
 class CrivoErastotenesTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function testParaUmaListaDeUmItemDeveRetornarUmaLIstaIgual()
+	public function testParaLimiteDoisDeveRetornarSomenteDois()
 	{
 		$crivo = new CrivoErastotenes(2);
 
